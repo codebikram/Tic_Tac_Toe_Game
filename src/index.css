@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(45, 11, 84);
+}
+.heading-text {
+  text-transform: capitalize;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.winner-box {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+.win-count {
+  font-size: 25px;
+  color: rgb(223, 200, 251);
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+.next-text {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.w-color {
+  text-transform: capitalize;
+  color: rgb(48, 245, 245);
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 15px solid rgb(146, 61, 243);
+  border-left: 15px solid rgb(146, 61, 243);
+}
+.column-box {
+  padding: 25px;
+  font-size: 50px;
+  height: 100px;
+  width: 100px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.X {
+  color: rgb(247, 35, 35);
+}
+.O {
+  color: #fff;
+}
+
+.border-b-r {
+  border-bottom: 15px solid rgb(146, 61, 243);
+  border-right: 15px solid rgb(146, 61, 243);
+}
+
+.btn-restart {
+  padding: 10px 20px;
+  margin-top: 30px;
+  font-size: 14px;
+  text-transform: uppercase;
+  background: rgb(202, 29, 29);
+  color: #fff;
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  border: 1px solid rgb(148, 14, 14);
+  transition: all 0.3s;
+}
+.btn-restart:hover {
+  background: rgb(148, 14, 14);
+}
