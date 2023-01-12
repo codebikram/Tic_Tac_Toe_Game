@@ -10,17 +10,26 @@ const App = () => {
   const [itemState, setItemState] = useState(initialState);
   const [isXplayer, setIsXplayer] = useState(false);
   const [winner, setWinner] = useState(null);
+  const [draw, setDraw] = useState(false);
   const [count, setCount] = useState(initialCount);
 
   useEffect(() => {
-    // console.log('state update');
+    // console.log('state update');//
     let winner = checkWinner();
+    console.log('check winner' + winner);
     if (winner) {
       setWinner(winner);
-      reset();
+      resetGame();
+    } else if (!itemState.includes('')) {
+      setDraw(true);
+      resetGame();
     }
     // eslint-disable-next-line
   }, [itemState]);
+
+  // useEffect(() => {
+  //   if
+  // }, [itemState]);
 
   useEffect(() => {
     if (winner === 'O') {
@@ -32,12 +41,13 @@ const App = () => {
   }, [winner]);
 
   // for auto restart
-  const reset = () => {
+  const resetGame = () => {
     // console.log('reset');
     setTimeout(() => {
       setItemState(initialState);
       setWinner(null);
-    }, 2800);
+      setDraw(false);
+    }, 1500);
   };
 
   // for checking the winner
@@ -77,7 +87,7 @@ const App = () => {
   };
 
   return (
-    <div className="container">
+    <div className="main-section">
       <h2 className="heading-text">tic tac toe - game</h2>
       <div className="winner-box">
         <p className="win-count w-color">
@@ -87,6 +97,7 @@ const App = () => {
           Player X - <span className="O">{count.X}</span>
         </p>
       </div>
+      {draw && <h3 className="next-text w-color">Match Tie</h3>}
       {!winner ? (
         <h3 className="next-text">
           Next turn -{' '}

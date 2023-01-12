@@ -8,13 +8,14 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #fff;
 }
-.container {
+.main-section {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(45, 11, 84);
+  /* background-color: rgb(45, 11, 84); */
+  background-image: linear-gradient(black, rgb(54, 10, 104), black);
 }
 .heading-text {
   text-transform: capitalize;
@@ -90,4 +91,16 @@ body {
 }
 .btn-restart:hover {
   background: rgb(148, 14, 14);
+}
+
+@media only screen and (max-width: 450px) {
+  .main-section {
+    padding: 10px;
+  }
+  .heading-text {
+    font-size: 36px;
+  }
+  .win-count {
+    font-size: 20px;
+  }
 }
